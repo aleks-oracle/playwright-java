@@ -27,6 +27,19 @@ mvn package
 - `src/main/java/org/example/` — application code
 - `src/test/java/` — test code (empty; test framework not yet configured)
 
+## Git Workflow
+
+**IMPORTANT:** Before starting any new task, always create and switch to the `develop` branch:
+```bash
+git checkout develop 2>/dev/null || git checkout -b develop
+```
+Never work directly on `main`.
+
+After merging a PR:
+1. Switch locally to `main`
+2. Delete the merged branch locally (`git branch -d <branch>`) and remotely (`git push origin --delete <branch>`)
+3. Pull latest `main` from remote (`git pull origin main`)
+
 ## Adding Playwright
 
 To get started, add to `pom.xml`:
